@@ -20,9 +20,9 @@ var config = {
 				//"oclazyload": "libs/oclazyload/dist/ocLazyLoad",					
 				//"oclazyload": "libs/oclazyload/dist/ocLazyLoad.require",
 				
-				"moudelRoute": "3Routes/_moudelRoute",
-				"moudelService":"2Services/_moudelService",
-				"moudelController":"1Controllers/_moudelController",
+				"moudelRoute": "4Modules/MoudelRoute",
+				"moudelService":"4Modules/MoudelService",
+				"moudelController":"4Modules/MoudelController",
 
 				"authservice":"2Services/AuthService",
 				"indexservice":"2Services/IndexService",
