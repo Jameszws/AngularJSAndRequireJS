@@ -7,14 +7,14 @@
 
 项目框架设计
 
-----JS
-  ----1Controller
-  ----2Services
-  ----3Routes
-  ----4Modules
-  ----CommonJs
-  ----libs
-  ----main.js
-----View
+----JS<br/>
+  ----1Controller<br/>
+  ----2Services<br/>
+  ----3Routes<br/>
+  ----4Modules<br/>
+  ----CommonJs<br/>
+  ----libs<br/>
+  ----main.js<br/>
+----View<br/>
 
 
