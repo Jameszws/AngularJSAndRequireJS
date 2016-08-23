@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>{{headTitle}}</title>
+		<base href="MyAppProject_V2.0/">
+		<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+		<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+		<meta content="application/xhtml+xml;charset=UTF-8" http-equiv="Content-Type">
+		<meta content="no-cache,must-revalidate" http-equiv="Cache-Control">
+		<meta name="baseUrl" content="" />
+		<meta content="no-cache" http-equiv="pragma">
+		<meta content="0" http-equiv="expires">
+		<meta content="telephone=no, address=no" name="format-detection">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<script data-main="../js/main" src="../js/libs/require.js"></script>
+	</head>
+
+	<body>		
+		<div>
+			<button ng-click="GoToIndex()"> 首页 </button>
+			<button ng-click="GoToTest1()"> Test1 </button>
+			<button ng-click="GoToTest2()"> Test2 </button>
+			<button ng-click="GoToStudent()"> 学生信息 </button>
+			<button ng-click="exit()">退出登陆</button>
+		</div>
+		<div ui-view></div>
+	</body>
+
+</html>
