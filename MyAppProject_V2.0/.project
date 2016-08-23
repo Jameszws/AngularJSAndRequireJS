@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>MyAppProject</name>
+	<name>MyAppProject_V2.0</name>
 	<comment>Create By HBuilder</comment>
 	<projects>
 	</projects>
@@ -22,7 +22,7 @@
 	</natures>
 	<filteredResources>
 		<filter>
-			<id>1465712873145</id>
+			<id>0</id>
 			<name></name>
 			<type>10</type>
 			<matcher>

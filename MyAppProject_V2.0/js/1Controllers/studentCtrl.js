@@ -1,60 +1,65 @@
 /*
  * 学生信息控制器
  */
-define(['moudelController','studentService'], function(moudelController) {
-	
-	moudelController.register.controller("student_Ctrl", ["$rootScope", "$scope", "studentsvc",
-		function($rootScope, $scope ,studentsvc) {
-			var pageOp={
+define(['moudelController', 'studentService'], function(moudelController) {
+
+	moudelController.register.controller("student_Ctrl", ["$rootScope", "$scope", "studentsvc", 'ENV',
+		function($rootScope, $scope, studentsvc, ENV) {
+			var pageOp = {
 				//无需身份验证
-				initRender:function(){
+				initRender: function() {
 					$rootScope.headTitle = "学生信息";
 				},
 				//需要身份验证
-				show:function(){					
-					$scope.showCourse=false;
-					$scope.showStudent=false;
+				show: function() {					
+					$scope.showCourse = false;
+					$scope.showStudent = false;
 					this.showMyInfoclick();
 					this.showStudentInfoclick();
-					this.getstudentbyid();
-					this.getstudents();
 				},
-				showMyInfoclick:function(){
-					$scope.showMyInfo=function(){
-						$scope.showCourse=true;
-						$scope.showStudent=false;
+				showMyInfoclick: function() {
+					var current = this;
+					$scope.showMyInfo = function() {
+						current.getstudentbyid();						
 					};
 				},
-				showStudentInfoclick:function(){					
-					$scope.showStudentInfo=function(){
-						$scope.showCourse=false;
-						$scope.showStudent=true;
-					};					
+				showStudentInfoclick: function() {
+					var current = this;
+					$scope.showStudentInfo = function() {
+						current.getstudents();
+					};
 				},
-				getstudentbyid:function(){
+				getstudentbyid: function() {
+					var current = this;
 					//获取我的课程信息
-					studentsvc.getstudentbyid().then(function(result){				
-						$scope.name=result.name;
-						$scope.sex=result.sex;
-						$scope.age=result.age;
-						$scope.courses=result.mycourse;
-					},function(error){
-						
-					},function(progress){
-						
+					var student=studentsvc(ENV._api.studentcourse);
+					student.getstudentbyid().then(function(result) {
+						$scope.name = result.name;
+						$scope.sex = result.sex;
+						$scope.age = result.age;
+						$scope.courses = result.mycourse;
+						$scope.showCourse = true;
+						$scope.showStudent = false;
+					}, function(error) {
+						console.log(err);
+					}, function(progress) {
+						console.log(progress);
 					});
 				},
-				getstudents:function(){
+				getstudents: function() {
 					//获取课程
-					studentsvc.getstudents().then(function(result){				
-						$scope.students=result;				
-					},function(error){
-						
-					},function(progress){
-						
+					var student=studentsvc(ENV._api.students);
+					student.getstudents().then(function(result) {
+						$scope.students = result;
+						$scope.showCourse = false;
+						$scope.showStudent = true;
+					}, function(error) {
+
+					}, function(progress) {
+
 					});
 				}
-			};				
+			};
 			pageOp.initRender();
 			pageOp.show();
 		}

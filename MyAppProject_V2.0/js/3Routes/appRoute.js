@@ -9,6 +9,21 @@ define(['moudelRoute'], function(moudelRoute) {
 			$urlRouterProvider.otherwise('/');
 
 			$stateProvider
+				.state('login', {
+					url: '/login',
+					controller: 'login_Ctrl',
+					templateUrl: '../view/login.html',
+					resolve: {
+						loadCtrl: ["$q", function($q) {
+							var deferred = $q.defer();
+							//异步加载controller／directive/filter/service
+							require([ctrlPath + 'loginCtrl'], function() {
+								deferred.resolve();
+							});
+							return deferred.promise;
+						}]
+					}
+				})
 				.state('student', {
 					url: '/student',
 					controller: 'student_Ctrl',
@@ -32,7 +47,7 @@ define(['moudelRoute'], function(moudelRoute) {
 					controller: 'test_Ctrl',
 					resolve: {
 						loadCtrl: ["$q", function($q) {
-							var deferred = $q.defer();							
+							var deferred = $q.defer();
 							require([ctrlPath + 'testCtrl'], function() {
 								deferred.resolve();
 							});
@@ -46,7 +61,7 @@ define(['moudelRoute'], function(moudelRoute) {
 					controller: 'test_Ctrl2',
 					resolve: {
 						loadCtrl: ["$q", function($q) {
-							var deferred = $q.defer();							
+							var deferred = $q.defer();
 							require([ctrlPath + 'testCtrl2'], function() {
 								deferred.resolve();
 							});
@@ -59,7 +74,7 @@ define(['moudelRoute'], function(moudelRoute) {
 					controller: "index_Ctrl",
 					resolve: {
 						loadCtrl: ["$q", function($q) {
-							var deferred = $q.defer();							
+							var deferred = $q.defer();
 							require([ctrlPath + 'indexCtrl'], function() {
 								deferred.resolve();
 							});
@@ -72,7 +87,7 @@ define(['moudelRoute'], function(moudelRoute) {
 					controller: "index_Ctrl",
 					resolve: {
 						loadCtrl: ["$q", function($q) {
-							var deferred = $q.defer();							
+							var deferred = $q.defer();
 							require([ctrlPath + 'indexCtrl'], function() {
 								deferred.resolve();
 							});

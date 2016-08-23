@@ -2,42 +2,30 @@
  * student服务
  */
 define(["moudelService"], function(moudelService) {
-
-	moudelService.register.factory("studentsvc", ['$q','$http','$location',function($q,$http,$location) {
-		var studentSvc = {
-			getstudentbyid: function() {
-				var deferred = $q.defer();
-		        var promise = deferred.promise;		        
-				$http({
-					url:"../jsondata/studentcourse.json",
-					method:"GET",
-					params:{
-						'id':'123'
-					}
-				}).success(function(data,header,config,status){
-					 deferred.resolve(data);
-				}).error(function(data,header,config,status){
-					 deferred.reject(data);
-				});
-				return promise;
+	
+	moudelService.register.factory("studentsvc", ['$q', '$http', '$location', 'authservice','ENV','restservice',function($q, $http, $location, authservice,ENV,restservice) {
+		var studentSvc=function(apiName){			
+			restservice.call(this,ENV,apiName);
+		}
+		
+		studentSvc.prototype = {
+			getstudentbyid: function() {				
+				ENV._type="GET";
+				ENV._params={ 'id': '123'};
+				return this.get();
 			},
 			getstudents: function() {
-				var deferred = $q.defer();
-		        var promise = deferred.promise;		        
-				$http({
-					url:"../jsondata/students.json",
-					method:"GET",
-					params:{
-						'id':'123'
-					}
-				}).success(function(data,header,config,status){
-					 deferred.resolve(data);
-				}).error(function(data,header,config,status){
-					 deferred.reject(data);
-				});
-				return promise;
+				ENV._type="GET";
+				ENV._params={ 'id': '123'};				
+				return this.get();				
 			}
 		};
-		return studentSvc;
+		
+		Horse.util.extend(studentSvc.prototype,restservice.prototype);
+		
+		return function(apiName){
+			return new studentSvc(apiName);
+		} 
+		
 	}]);
 });
