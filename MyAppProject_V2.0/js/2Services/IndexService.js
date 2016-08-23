@@ -7,11 +7,11 @@ define(["moudelService"], function(moudelService) {
 		var indexSvc = {
 			InitEvent: function() {
 				$rootScope.GoToIndex=function(){
-					$location.path("/index");
+					$location.path("/index");					
 				};
 				
 				$rootScope.GoToTest1 = function() {
-					$location.path("/test");
+					$location.path("/test");					
 				};
 
 				$rootScope.GoToTest2 = function() {
@@ -20,7 +20,13 @@ define(["moudelService"], function(moudelService) {
 				
 				$rootScope.GoToStudent=function(){
 					$location.path("/student");
-				}
+				};
+				
+				$rootScope.exit=function(){
+					$rootScope.UserInfo = null;					
+					Horse.util.delCookie("UserInfo");
+					window.location.href="../#/login";
+				};
 			},
 			setPageTitle:function(){
 				

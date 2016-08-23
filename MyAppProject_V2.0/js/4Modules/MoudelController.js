@@ -2,7 +2,7 @@
  * 建立angular.module
  */
 define(['angular'], function (angular) {
-	var moduleCtrl = angular.module('myapp.controller', ["myapp.service"]);
+	var moduleCtrl = angular.module('myapp.controller', ["myapp.service",'ngCookies']);
 	moduleCtrl.config(function($controllerProvider, $compileProvider, $filterProvider, $provide) {
 		moduleCtrl.register = {
 			//得到$controllerProvider的引用

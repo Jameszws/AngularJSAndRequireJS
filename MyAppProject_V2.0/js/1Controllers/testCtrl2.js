@@ -1,11 +1,12 @@
 /*
  * 
  */
-define(['moudelController'], function(moduleCtrl) {
+define(['moudelController','zPageView'], function(moduleCtrl,zPageView) {
 	moduleCtrl.register.controller('test_Ctrl2', ['$scope', '$rootScope', '$location',  function($scope, $rootScope, $location) {
-
-		$rootScope.headTitle ="test2";	
-		
-		console.log($location.absUrl())
+		var pageView = zPageView.extend({
+			onShow:function(){
+				$rootScope.headTitle = "2test";			
+			}
+		});
 	}]);
 });
