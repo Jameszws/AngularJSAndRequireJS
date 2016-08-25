@@ -6,6 +6,7 @@ define(['moudelController', 'zPageView'], function(moduleCtrl, zPageView) {
 		var pageView = zPageView.extend({
 			onShow: function() {
 				$rootScope.headTitle = "首页";
+				/*
 				Horse.confirm.init({
 					title: "234",
 					content: "jadfjk",
@@ -17,6 +18,7 @@ define(['moudelController', 'zPageView'], function(moduleCtrl, zPageView) {
 						
 					}
 				});
+				*/
 			}
 		});
 	}]);

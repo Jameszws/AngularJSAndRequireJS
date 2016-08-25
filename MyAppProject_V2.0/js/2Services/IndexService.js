@@ -3,8 +3,11 @@
  */
 define(["moudelService"], function(moudelService) {
 
-	moudelService.factory("indexservice", function($rootScope,$location) {
-		var indexSvc = {
+	moudelService.factory("indexservice", ["$rootScope","$location",'restservice','ENV',function($rootScope,$location,restservice,ENV) {
+		var indexSvc=function(){
+			restservice.call(this,indexSvc,false);
+		};
+		indexSvc.prototype={
 			InitEvent: function() {
 				$rootScope.GoToIndex=function(){
 					$location.path("/index");					
@@ -27,11 +30,10 @@ define(["moudelService"], function(moudelService) {
 					Horse.util.delCookie("UserInfo");
 					window.location.href="../#/login";
 				};
-			},
-			setPageTitle:function(){
-				
 			}
-		};
-		return indexSvc;
-	});
+		};		
+		return function(){
+			return new indexSvc();
+		}		
+	}]);
 });
