@@ -19,7 +19,7 @@ define(['moudelController', 'zPageView'], function(moduleCtrl, zPageView) {
 					};
 					$rootScope.UserInfo = userInfo;
 					var userInfoStr = JSON.stringify(userInfo);
-					Horse.util.setCookie("UserInfo", userInfoStr, "s100");
+					Horse.util.setCookie("UserInfo", userInfoStr, "h1");
 					window.location.href="../#/index";
 				};
 			}

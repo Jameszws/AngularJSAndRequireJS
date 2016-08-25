@@ -5,8 +5,9 @@ define(['moudelRoute'], function(moudelRoute) {
 
 	moudelRoute.run(["$rootScope", "$state", '$location', '$log', 'indexservice', 'authservice', function($rootScope, $state, $location, $log, indexservice, authservice) {
 
-		indexservice.InitEvent();
-
+		var indexSvc=indexservice();
+		indexSvc.InitEvent();
+		
 		$rootScope.$on('$stateChangeError', function(event, toState, toParams, fromState, fromParams, error) {
 			$log.error('An error occurred while changing states: ' + error);
 
