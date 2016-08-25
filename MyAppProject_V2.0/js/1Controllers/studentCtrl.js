@@ -6,11 +6,11 @@ define(['moudelController','zPageView'], function(moudelController,zPageView) {
 	moudelController.register.controller("student_Ctrl", ["$rootScope", "$scope", "studentsvc", 'ENV',
 		function($rootScope, $scope, studentsvc, ENV) {
 			var page=zPageView.extend({
-				//无需身份验证
+				
 				onInitView: function() {
 					$rootScope.headTitle = "学生信息";
 				},
-				//需要身份验证
+				
 				onShow: function() {					
 					$scope.showCourse = false;
 					$scope.showStudent = false;
