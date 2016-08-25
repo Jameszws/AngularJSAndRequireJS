@@ -34,6 +34,6 @@ define(["moudelService"], function(moudelService) {
 		};		
 		return function(){
 			return new indexSvc();
-		}		
+		}
 	}]);
 });
