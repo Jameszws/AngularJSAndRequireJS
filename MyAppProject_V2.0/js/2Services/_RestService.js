@@ -28,7 +28,8 @@ define(["moudelService"], function(moudelService) {
 					if (Horse.validate.objIsNull(userInfo) || Horse.validate.isNull(userInfo.token)) {
 						if ($location.absUrl().toLowerCase().indexOf("login") >= 0) {
 							return;
-						}!Horse.validate.objIsNull(event) && event.preventDefault();
+						}
+						!Horse.validate.objIsNull(event) && event.preventDefault();
 						Horse.alert.init({
 							title: "登录失败",
 							content: "您目前为非登陆状态，请登录~",
@@ -67,7 +68,8 @@ define(["moudelService"], function(moudelService) {
 				Horse.validate.isFunction(svc) && Horse.util.extend(svc.prototype, restservice.prototype);
 				var current = this;
 				//isNeedCheckAuth ：服务是否需要判断登陆态    
-				//	true : 需要    false ：不需要
+				//	true : 需要    
+				//	false ：不需要
 				if (isNeedCheckAuth === true) {
 					authservice.checkAuth(null, function(ret) {
 						if (ret) {
@@ -101,7 +103,8 @@ define(["moudelService"], function(moudelService) {
 					$http({
 						method: 'GET',
 						url: this.url,
-						params: ENV._params
+						params: ENV._params,
+						timeout: ENV._timeout
 					}).success(function(data, header, config, status) {
 						deferred.resolve(data); //声明执行成功
 					}).error(function(data, header, config, status) {
@@ -132,7 +135,8 @@ define(["moudelService"], function(moudelService) {
 					$http({
 						method: 'POST',
 						url: this.url,
-						params: ENV._params
+						params: ENV._params,
+						timeout: ENV._timeout
 					}).success(function(data, header, config, status) {
 						deferred.resolve(data); //声明执行成功
 					}).error(function(data, header, config, status) {
