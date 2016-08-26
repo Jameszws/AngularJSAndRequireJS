@@ -34,13 +34,20 @@ var config = {
 
 				"util": "Util/util",
 				"validate": "Util/validate",
-
+				
+				/***************(Horse配置 begin)********************/
+				
 				'zPageView': "Horse/app/z.page.view",
 				'Horse': "Horse/horse.seed",
 				'zUiPopuplayerCommon': "Horse/ui/z.ui.popuplayer/z.ui.popuplayer._common",
 				'popupAlert': "Horse/ui/z.ui.popuplayer/z.ui.popuplayer.alert",
 				'popupConfirm': "Horse/ui/z.ui.popuplayer/z.ui.popuplayer.confirm",
-				'popupLoad': "Horse/ui/z.ui.popuplayer/z.ui.popuplayer.load"
+				'popupLoad': "Horse/ui/z.ui.popuplayer/z.ui.popuplayer.load",
+				'zCookieStorage':"Horse/data/storage/z.cookie.storage",
+				'zLocalStorage':"Horse/data/storage/z.local.storage",
+				'zSessionStorage':"Horse/data/storage/z.session.storage"
+				
+				/***************(Horse配置 end)********************/
 			},
 			map: {
 				'*': {

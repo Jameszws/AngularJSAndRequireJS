@@ -27,7 +27,7 @@ define(["moudelService"], function(moudelService) {
 				
 				$rootScope.exit=function(){
 					$rootScope.UserInfo = null;					
-					Horse.util.delCookie("UserInfo");
+					Horse.zCookieStorage.delCookie("UserInfo");
 					window.location.href="../#/login";
 				};
 			}

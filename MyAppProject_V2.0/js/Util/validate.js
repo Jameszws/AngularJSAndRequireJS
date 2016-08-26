@@ -29,6 +29,9 @@ define([],function(){
 			return false;
 		},
 		
+		isTrue:function(ret){			
+			return ret===true;
+		}
 	};
 	return validate;
 });

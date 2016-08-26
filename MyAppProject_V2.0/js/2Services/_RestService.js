@@ -21,9 +21,8 @@ define(["moudelService"], function(moudelService) {
 			 *   checkAuthSync:同步验证
 			 */
 			var authSvc = {
-				checkAuth: function(event, callback) {
-					var userInfoStr = Horse.util.getCookie("UserInfo");
-					var userInfo = JSON.parse(userInfoStr);
+				checkAuth: function(event, callback) {					
+					var userInfo = Horse.zCookieStorage.getCookie("UserInfo");
 					$rootScope.UserInfo = userInfo;
 					if (Horse.validate.objIsNull(userInfo) || Horse.validate.isNull(userInfo.token)) {
 						if ($location.absUrl().toLowerCase().indexOf("login") >= 0) {
@@ -45,9 +44,8 @@ define(["moudelService"], function(moudelService) {
 					Horse.validate.isFunction(callback) && callback(true);
 					return;
 				},
-				checkAuthSync: function() {
-					var userInfoStr = Horse.util.getCookie("UserInfo");
-					var userInfo = JSON.parse(userInfoStr);
+				checkAuthSync: function() {					
+					var userInfo = Horse.zCookieStorage.getCookie("UserInfo");
 					$rootScope.UserInfo = userInfo;
 					if (Horse.validate.objIsNull(userInfo) || Horse.validate.isNull(userInfo.token)) {
 						return false;
