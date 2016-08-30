@@ -6,8 +6,7 @@
 项目中充分体现了模块化开发、MVVM、IOC、Route等思想
 
 项目框架设计：<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;本框架由本人独立设计，使用RequireJS实现异步模块加载，使用AngularJS实现前端交互，JS编写使用Horse框架，Horse框架实现了前端UI设计、前端功能实现规范、以及结合登录态控制服务等功能。Horse框架可扩展性高，可以基于该框架，扩展出适用于任一项目的架构。
-&nbsp;&nbsp;&nbsp;&nbsp;但是原则是一切从轻量出发；
+&nbsp;&nbsp;&nbsp;&nbsp;本框架由本人独立设计，使用RequireJS实现异步模块加载，使用AngularJS实现前端交互，JS编写使用Horse框架，Horse框架实现了前端UI设计、前端功能实现规范、以及结合登录态控制服务等功能。Horse框架可扩展性高，可以基于该框架，扩展出适用于任一项目的架构。但是设计原则是一切从轻量出发；
 
 目标：<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;（1）让前端开发面向对象化；<br/>
