@@ -1,4 +1,13 @@
 /*
+*  instructions ：DatePicker  
+*  date : 2014-06-20
+*  author : 张文书
+*  Last Modified 
+*  By 张文书
+*/
+
+
+/*
  * TODO 弹出层 common
  */
 define([], function() {

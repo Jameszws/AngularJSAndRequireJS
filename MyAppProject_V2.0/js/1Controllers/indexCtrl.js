@@ -6,8 +6,11 @@ define(['moudelController', 'zPageView'], function(moduleCtrl, zPageView) {
 		var pageView = zPageView.extend({
 			onShow: function() {
 				$rootScope.headTitle = "首页";
-				Horse.zLocalStorage.set("234",{qa:"234"});
+				Horse.zLocalStorage.set("234", {
+					qa: "234"
+				});
 				Horse.zLocalStorage.get("234");
+				
 				/*
 				Horse.confirm.init({
 					title: "234",

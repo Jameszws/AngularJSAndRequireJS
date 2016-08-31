@@ -8,6 +8,9 @@ define(['moudelController','zPageView'], function(moduleCtrl,zPageView) {
 			var pageView = zPageView.extend({
 				onShow:function(){
 					$rootScope.headTitle = "1test";			
+					Horse.ui.citylinkage.init({
+					    contentId: "cityselect"  //接收容器的id
+					});
 				}				
 			});
 		}

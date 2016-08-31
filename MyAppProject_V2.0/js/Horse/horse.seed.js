@@ -1,5 +1,9 @@
-define(['validate', 'util', 'popupAlert', 'popupConfirm', 'popupLoad', 'zCookieStorage', 'zLocalStorage', 'zSessionStorage'],
-	function(validate, util, popupAlert, popupConfirm, popupLoad, zCookieStorage, zLocalStorage, zSessionStorage) {
+/*
+ * TODO Horse框架 
+ */
+
+define(['validate', 'util', 'popupAlert', 'popupConfirm', 'popupLoad', 'zCookieStorage', 'zLocalStorage', 'zSessionStorage','datepicker','citylinkage'],
+	function(validate, util, popupAlert, popupConfirm, popupLoad, zCookieStorage, zLocalStorage, zSessionStorage,datepicker,citylinkage) {
 
 		/*
 		 * TODO 说明：alert弹出 五种状态 "error"、"info"、"question"、"warning"、"alert"
@@ -33,7 +37,12 @@ define(['validate', 'util', 'popupAlert', 'popupConfirm', 'popupLoad', 'zCookieS
 			
 			zCookieStorage:zCookieStorage,
 			zLocalStorage:zLocalStorage,
-			zSessionStorage:zSessionStorage
+			zSessionStorage:zSessionStorage,
+			
+			ui:{
+				datepicker:new datepicker(),
+				citylinkage:new citylinkage()
+			}
 		};
 
 		window.Horse = Horse;

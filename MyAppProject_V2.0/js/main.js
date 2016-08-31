@@ -43,6 +43,10 @@ var config = {
 				'popupAlert': "Horse/ui/z.ui.popuplayer/z.ui.popuplayer.alert",
 				'popupConfirm': "Horse/ui/z.ui.popuplayer/z.ui.popuplayer.confirm",
 				'popupLoad': "Horse/ui/z.ui.popuplayer/z.ui.popuplayer.load",
+				'datepicker': "Horse/ui/z.ui.datepicker/z.ui.datepicker",
+				'citydata':'Horse/ui/z.ui.citylinkage/z.ui.citydata',
+				'citylinkage':'Horse/ui/z.ui.citylinkage/z.ui.citylinkage',				
+				
 				'zCookieStorage':"Horse/data/storage/z.cookie.storage",
 				'zLocalStorage':"Horse/data/storage/z.local.storage",
 				'zSessionStorage':"Horse/data/storage/z.session.storage"
@@ -77,6 +81,16 @@ var config = {
 				'zUiPopuplayerCommon':{
 					deps: [						
 						'css!../js/Horse/ui/z.ui.popuplayer/css/z.ui.popuplayer.css'
+					]
+				},
+				'datepicker':{
+					deps:[
+						'css!../js/Horse/ui/z.ui.datepicker/css/datepicker'
+					]
+				},
+				'citylinkage':{
+					deps:[
+						'css!../js/Horse/ui/z.ui.citylinkage/css/citylinkage'
 					]
 				}
 			}

@@ -5,7 +5,8 @@ define(["moudelService"], function(moudelService) {
 
 	moudelService.factory("indexservice", ["$rootScope","$location",'restservice','ENV',function($rootScope,$location,restservice,ENV) {
 		var indexSvc=function(){
-			restservice.call(this,indexSvc,false);
+			ENV._isNeedCheckLoginState=false;
+			restservice.call(this,indexSvc);
 		};
 		indexSvc.prototype={
 			InitEvent: function() {
