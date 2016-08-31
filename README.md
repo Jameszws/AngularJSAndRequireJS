@@ -19,7 +19,7 @@
 
 Horse实现图：
  
- &nbsp;&nbsp;&nbsp;&nbsp;![image](https://github.com/Jameszws/ProjectImg/blob/master/AngularAndRequirejs/Horse.png)
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![image](https://github.com/Jameszws/ProjectImg/blob/master/AngularAndRequirejs/Horse.png)
 
 项目架构文件：<br/>
 ----JS                                              <br/>
