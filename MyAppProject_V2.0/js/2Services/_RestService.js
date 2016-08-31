@@ -11,7 +11,8 @@ define(["moudelService"], function(moudelService) {
 		'_api': {
 			studentcourse: "studentcourse.json",
 			students: "students.json"
-		}
+		},
+		'_isNeedCheckLoginState': true //是否需要验证登录态    true : 需要     false ：不需要
 	});
 
 	moudelService.factory("authservice", function($rootScope, $location, $cookieStore) {
@@ -21,14 +22,13 @@ define(["moudelService"], function(moudelService) {
 			 *   checkAuthSync:同步验证
 			 */
 			var authSvc = {
-				checkAuth: function(event, callback) {					
+				checkAuth: function(event, callback) {
 					var userInfo = Horse.zCookieStorage.getCookie("UserInfo");
 					$rootScope.UserInfo = userInfo;
 					if (Horse.validate.objIsNull(userInfo) || Horse.validate.isNull(userInfo.token)) {
 						if ($location.absUrl().toLowerCase().indexOf("login") >= 0) {
 							return;
-						}
-						!Horse.validate.objIsNull(event) && event.preventDefault();
+						}!Horse.validate.objIsNull(event) && event.preventDefault();
 						Horse.alert.init({
 							title: "登录失败",
 							content: "您目前为非登陆状态，请登录~",
@@ -44,7 +44,7 @@ define(["moudelService"], function(moudelService) {
 					Horse.validate.isFunction(callback) && callback(true);
 					return;
 				},
-				checkAuthSync: function() {					
+				checkAuthSync: function() {
 					var userInfo = Horse.zCookieStorage.getCookie("UserInfo");
 					$rootScope.UserInfo = userInfo;
 					if (Horse.validate.objIsNull(userInfo) || Horse.validate.isNull(userInfo.token)) {
@@ -65,10 +65,7 @@ define(["moudelService"], function(moudelService) {
 			function restservice(svc, isNeedCheckAuth) {
 				Horse.validate.isFunction(svc) && Horse.util.extend(svc.prototype, restservice.prototype);
 				var current = this;
-				//isNeedCheckAuth ：服务是否需要判断登陆态    
-				//	true : 需要    
-				//	false ：不需要
-				if (isNeedCheckAuth === true) {
+				if (ENV._isNeedCheckLoginState) {
 					authservice.checkAuth(null, function(ret) {
 						if (ret) {
 							return;
@@ -82,7 +79,7 @@ define(["moudelService"], function(moudelService) {
 					var deferred = $q.defer(); //声明延后执行
 					var promise = deferred.promise;
 					//判断登陆态
-					if (!authservice.checkAuthSync()) {
+					if (ENV._isNeedCheckLoginState && !authservice.checkAuthSync()) {
 						Horse.alert.init({
 							title: "登录失败",
 							content: "您目前为非登陆状态，请登录~",
@@ -114,7 +111,7 @@ define(["moudelService"], function(moudelService) {
 					var deferred = $q.defer(); //声明延后执行
 					var promise = deferred.promise;
 					//判断登陆态
-					if (!authservice.checkAuthSync()) {
+					if (ENV._isNeedCheckLoginState && !authservice.checkAuthSync()) {
 						Horse.alert.init({
 							title: "登录失败",
 							content: "您目前为非登陆状态，请登录~",

@@ -1,5 +1,42 @@
 define([], function() {
+
+	//定义公共操作
+	Function.prototype.delegate = function(context, params) {
+		var func = this;
+		return function() {
+			if (params == null) {
+				return func.apply(context);
+			}
+			return func.apply(context, params);
+		};
+	};
+
+	String.prototype.endWith = function(s) {
+		if (s == null || s == "" || this.length == 0 || s.length > this.length)
+			return false;
+		if (this.substring(this.length - s.length) == s)
+			return true;
+		else
+			return false;
+	};
+
+	String.prototype.startWith = function(s) {
+		if (s == null || s == "" || this.length == 0 || s.length > this.length)
+			return false;
+		if (this.substr(0, s.length) == s)
+			return true;
+		else
+			return false;
+	};
+
 	var util = {
+		delegate: function(func, context, params) {
+			if ((typeof(eval(func)) == "function")) {
+				return func.delegate(context, params);
+			} else {
+				return function() {};
+			}
+		},
 
 		coverObject: function(obj1, obj2) {
 
@@ -58,6 +95,26 @@ define([], function() {
 				}
 			}
 			return target;
+		},
+
+		//js 判断样式是否存在
+		hasClass: function(obj, cls) {
+			return obj.className.match(new RegExp('(\\s|^)' + cls + '(\\s|$)'));
+		},
+
+		//js 为指定的dom元素添加样式
+		addClass: function(obj, cls) {
+			if (!this.hasClass(obj, cls)) {
+				obj.className += " " + cls;
+			}
+		},
+
+		//js 删除指定dom元素的样式
+		removeClass: function(obj, cls) {
+			if (this.hasClass(obj, cls)) {
+				var reg = new RegExp('(\\s|^)' + cls + '(\\s|$)');
+				obj.className = obj.className.replace(reg, ' ');
+			}
 		}
 	};
 	return util;

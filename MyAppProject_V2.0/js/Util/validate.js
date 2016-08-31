@@ -31,7 +31,30 @@ define([],function(){
 		
 		isTrue:function(ret){			
 			return ret===true;
-		}
+		},
+		
+		//说明：
+	    //  判断元素是否存在某个属性   true：不包含   false:包含 
+	    isExistAttr: function (id, attr) {
+	
+	        if (typeof (document.getElementById(id).attributes[attr]) != "undefined") {
+	            return false;
+	        }
+	        return true;
+	    },
+		
+		//说明：
+	    //  判断输入框中输入的日期格式为yyyy-mm-dd和正确的日期   短日期，形如 (2008-07-22)
+	    isDate: function (str) {
+	        var r = str.match(/^(\d{1,4})(-|\/)(\d{1,2})\2(\d{1,2})$/);
+	        if (r == null) {
+	            return false;
+	        }
+	        var d = new Date(r[1], r[3] - 1, r[4]);
+	        return (d.getFullYear() == r[1] && (d.getMonth() + 1) == r[3] && d.getDate() == r[4]);
+	    },
+
+
 	};
 	return validate;
 });
