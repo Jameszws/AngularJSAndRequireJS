@@ -15,7 +15,7 @@
 
 项目架构：
 
- ![image](https://github.com/Jameszws/ProjectImg/blob/master/AngularAndRequirejs/require%2Bangular.png)
+ ![image](https://github.com/Jameszws/ProjectImg/blob/master/AngularAndRequirejs/123.png)
 
 ----JS                                  <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;----1Controller             <br/>
