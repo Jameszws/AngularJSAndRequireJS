@@ -18,7 +18,7 @@
  ![image](https://github.com/Jameszws/ProjectImg/blob/master/AngularAndRequirejs/123.png)
 
 
-项目架构文件：
+项目架构文件：<br/>
 ----JS                                              <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;----1Controller             <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;----2Services               <br/>
