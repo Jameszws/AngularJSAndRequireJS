@@ -13,6 +13,10 @@
 &nbsp;&nbsp;&nbsp;&nbsp;（2）让前端开发更有层次；<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;（3）最终实现多版本、轻量、方便使用<br/>
 
+项目架构：
+
+ ![image](https://github.com/Jameszws/ProjectImg/blob/master/AngularAndRequirejs/require%2Bangular.png)
+
 ----JS                                  <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;----1Controller             <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;----2Services               <br/>
