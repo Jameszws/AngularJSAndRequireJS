@@ -15,8 +15,11 @@
 
 项目架构图：
 
- ![image](https://github.com/Jameszws/ProjectImg/blob/master/AngularAndRequirejs/123.png)
+ ![image](https://github.com/Jameszws/ProjectImg/blob/master/AngularAndRequirejs/projectArchitecture.png)
 
+Horse实现图：
+ 
+ ![image](https://github.com/Jameszws/ProjectImg/blob/master/AngularAndRequirejs/Horse.png)
 
 项目架构文件：<br/>
 ----JS                                              <br/>
