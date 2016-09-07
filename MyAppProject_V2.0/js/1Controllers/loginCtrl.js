@@ -17,7 +17,7 @@ define(['moudelController', 'zPageView'], function(moduleCtrl, zPageView) {
 						userId: "1",
 						token: "sidr$%^879"
 					};
-					$rootScope.UserInfo = userInfo;					
+					$rootScope.UserInfo = userInfo;
 					Horse.zCookieStorage.setCookie("UserInfo", userInfo, "h1");
 					window.location.href="../#/index";
 				};
