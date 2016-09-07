@@ -14,7 +14,7 @@ define(["moudelService"], function(moudelService) {
 					$location.path("/index");					
 				};
 				
-				$rootScope.GoToTest1 = function() {
+				$rootScope.GoToTest1 = function() {					
 					$location.path("/test");					
 				};
 

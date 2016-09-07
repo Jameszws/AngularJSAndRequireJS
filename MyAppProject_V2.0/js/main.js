@@ -12,6 +12,7 @@ var config = {
 		require.config({
 			baseUrl: "../js",
 			paths: {
+				"text":"libs/require-text",
 				"jquery": "libs/jquery203",
 				"angular": "libs/angular.min",
 				"angular-ui-router": "libs/angular-ui-router",
@@ -45,7 +46,13 @@ var config = {
 				'popupLoad': "Horse/ui/z.ui.popuplayer/z.ui.popuplayer.load",
 				'datepicker': "Horse/ui/z.ui.datepicker/z.ui.datepicker",
 				'citydata':'Horse/ui/z.ui.citylinkage/z.ui.citydata',
-				'citylinkage':'Horse/ui/z.ui.citylinkage/z.ui.citylinkage',				
+				'citylinkage':'Horse/ui/z.ui.citylinkage/z.ui.citylinkage',
+				'uploadImg':'Horse/ui/z.ui.uploadImg/z.ui.uploadImg',
+				'virtualKey':'Horse/ui/z.ui.virtualkey/z.ui.virtualkey',
+				'virtualKeyTempl':'Horse/ui/z.ui.virtualkey/html/z.ui.virtualkey.html',
+				
+				'securitycode':"Horse/ui/z.ui.securitycode/z.ui.securitycode.new",
+				'securitycodeTempl':"Horse/ui/z.ui.securitycode/html/z.ui.securitycode.new.html",
 				
 				'zCookieStorage':"Horse/data/storage/z.cookie.storage",
 				'zLocalStorage':"Horse/data/storage/z.local.storage",
@@ -91,6 +98,21 @@ var config = {
 				'citylinkage':{
 					deps:[
 						'css!../js/Horse/ui/z.ui.citylinkage/css/citylinkage'
+					]
+				},
+				'uploadImg':{
+					deps:[
+						'css!../js/Horse/ui/z.ui.uploadImg/css/uploadImg'
+					]
+				},
+				'virtualKey':{
+					deps:[
+						'css!../js/Horse/ui/z.ui.virtualkey/css/virtualkey'
+					]
+				},
+				'securitycode':{
+					deps:[
+						"css!../js/Horse/ui/z.ui.securitycode/css/securitycode.new"
 					]
 				}
 			}

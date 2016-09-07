@@ -25,6 +25,6 @@ define(['moudelController', 'zPageView'], function(moduleCtrl, zPageView) {
 				});
 				*/
 			}
-		});
+		});		
 	}]);
 });
