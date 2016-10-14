@@ -15,7 +15,7 @@ define(["moudelService"], function(moudelService) {
 		'_isNeedCheckLoginState': true //是否需要验证登录态    true : 需要     false ：不需要
 	});
 
-	moudelService.factory("authservice", function($rootScope, $location, $cookieStore) {
+	moudelService.factory("authservice", ['$rootScope','$location', '$cookieStore',function($rootScope, $location, $cookieStore) {
 			/*
 			 *	TODO 基础服务：身份验证服务
 			 * 	 checkAuth:异步验证，需要传入回调函数
@@ -54,7 +54,7 @@ define(["moudelService"], function(moudelService) {
 				}
 			};
 			return authSvc;
-		})
+		}])
 		/*
 		 *	TODO 基础服务：rest服务
 		 * 	@params 说明： 

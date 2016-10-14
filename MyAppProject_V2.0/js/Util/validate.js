@@ -1,6 +1,6 @@
 /* 
  *
- *验证 
+ * TODO 验证功能 
  * 
  */
 define([], function() {

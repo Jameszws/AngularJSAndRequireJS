@@ -1,0 +1,1 @@
+define(["moudelController","zPageView","citylinkage","uploadImg"],function(e,t,o,n){e.register.controller("test_Ctrl",["$scope","$rootScope","$http","$location","authservice",function(e,i,a,l,c){t.extend({onShow:function(){i.headTitle="1test",(new o).init({contentId:"cityselect"}),(new n).init({fileAreaId:"aa",showNameAreaId:"bb",maxUploadCount:5})}})}])});

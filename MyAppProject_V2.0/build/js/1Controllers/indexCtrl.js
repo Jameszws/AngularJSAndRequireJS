@@ -1,0 +1,1 @@
+define(["moudelController","zPageView"],function(o,e){o.register.controller("index_Ctrl",["$rootScope","$scope","$location",function(o,t,n){e.extend({onShow:function(){o.headTitle="首页",Horse.zLocalStorage.set("234",{qa:"234"}),Horse.zLocalStorage.get("234"),console.log(22222222)}})}])});

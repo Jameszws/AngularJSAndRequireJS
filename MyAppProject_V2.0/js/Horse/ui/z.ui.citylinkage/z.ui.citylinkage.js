@@ -280,7 +280,8 @@ define(['citydata'],function (citydata) {
         //获取元素位置  定位
         getPosition: function () {
             var left = $("#" + this.options.contentId).offset().left;
-            var top = $("#" + this.options.contentId).offset().top + $("#" + this.options.contentId).outerHeight();
+            //zepto用height()方法，jquery 中使用 outerHeight()
+            var top = $("#" + this.options.contentId).offset().top + $("#" + this.options.contentId).height();
             $("#citylinkageTab").css("left", left);
             $("#citylinkageTab").css("top", top);
         }

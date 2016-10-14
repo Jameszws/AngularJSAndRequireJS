@@ -14,6 +14,7 @@ var config = {
 			paths: {
 				"text":"libs/require-text",
 				"jquery": "libs/jquery203",
+				"zepto": "libs/zepto.min",				
 				"angular": "libs/angular.min",
 				"angular-ui-router": "libs/angular-ui-router",
 				//"angular-route": "libs/angular-route.min",
@@ -120,7 +121,7 @@ var config = {
 	},
 
 	loadMustRequireModule: function() {
-		require(["jquery", 'angular', 'angular-sanitize', 'angular-cookies', 'angular-ui-router',
+		require(["zepto", 'angular', 'angular-sanitize', 'angular-cookies', 'angular-ui-router',
 			'moudelRoute', 'moudelService', 'moudelController',
 			'appRoute', 'appRun',
 			'restservice', 'indexservice','Horse', 'zPageView'

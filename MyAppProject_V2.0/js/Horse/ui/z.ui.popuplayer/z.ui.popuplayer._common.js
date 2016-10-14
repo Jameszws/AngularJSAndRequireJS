@@ -196,7 +196,7 @@ define([], function() {
 
 			var len = $("div[userDefinedAttr='popupLayerBg']").length;
 			$("#popupBg_" + len).show();
-			$("#popupBg_" + len).css("height", $(document).height());
+			//$("#popupBg_" + len).css("height", $(document).height());
 			$("#popupShow_" + len).show();
 
 		},

@@ -10,7 +10,7 @@ define(['moudelController', 'zPageView'], function(moduleCtrl, zPageView) {
 					qa: "234"
 				});
 				Horse.zLocalStorage.get("234");
-				
+				console.log(22222222);
 				/*
 				Horse.confirm.init({
 					title: "234",

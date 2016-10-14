@@ -7,6 +7,14 @@ define(['moudelController','zPageView'], function(moudelController,zPageView) {
 		function($rootScope, $scope, studentsvc, ENV) {
 			var page=zPageView.extend({
 				
+				events:{
+					"click #aa":"aaHandler"
+				},
+				
+				aaHandler:function(){
+					alert(123);
+				},
+				
 				onInitView: function() {
 					$rootScope.headTitle = "学生信息";
 				},
@@ -17,14 +25,16 @@ define(['moudelController','zPageView'], function(moudelController,zPageView) {
 					this.getPageParams();
 					this.showMyInfoclick();
 					this.showStudentInfoclick();
-					this.GetQQChannelInfo();
+					this.getQQChannelInfo();
 				},
+				
 				showMyInfoclick: function() {
 					var current = this;
 					$scope.showMyInfo = function() {
 						current.getstudentbyid();						
 					};
 				},
+				
 				showStudentInfoclick: function() {
 					var current = this;
 					$scope.showStudentInfo = function() {
@@ -47,6 +57,7 @@ define(['moudelController','zPageView'], function(moudelController,zPageView) {
 						console.log(progress);
 					});
 				},
+				
 				getstudents: function() {
 					//获取课程
 					this.studentsvc.getstudents().then(function(result) {
@@ -59,7 +70,8 @@ define(['moudelController','zPageView'], function(moudelController,zPageView) {
 
 					});
 				},
-				GetQQChannelInfo:function(){
+				
+				getQQChannelInfo:function(){
 					var current=this;
 					$scope.GetQQChannelInfo=function(){						
 						current.studentsvc.GetQQChannelInfo().then(function(ret){
@@ -71,6 +83,7 @@ define(['moudelController','zPageView'], function(moudelController,zPageView) {
 						});
 					};					
 				},
+				
 				getPageParams:function(){
 					this.studentsvc=studentsvc();
 				}
