@@ -1,4 +1,4 @@
-# AngularJSAndRequireJS
+# Horse Framework Repository 
 
 
 本项目是基于AngularJS + RequiresJS + Horse 搭建的前端模块化框架。
