@@ -45,3 +45,5 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+/MyAppProject_V2.0/node_modules
+/MyAppProject_V2.0/src/js/libs
